@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <h1>Formulario d'inscripció Cyberwall</h1>
+
+        <form action="#" method="post">
+            <!-- Name -->
+            <label for="name">Name:</label> <br>
+            <input type="text" id="name" name="name" placeholder="Nom i cognoms..." required class="required-field">
+
+            <br><br>
+
+            <!-- User Name -->
+            <label for="username">Create a user name:</label> <br>
+            <input type="text" id="username" name="username" required class="required-field">
+
+            <br><br>
+
+            <!-- Create a password -->
+            <label for="password">Create a password: </label> <br>
+            <input type="text" id="password" name="password" required class="required-field">
+
+            <br><br>
+
+            <!-- Birthday -->
+            <label for="birthday">Birthday: </label>
+            <input type="date" id="birthday" name="birthday"> 
+
+            <br><br>
+
+            <!-- I am -->
+            <label for="iam">I am: </label>
+            <select id="iam" name="iam">
+                <option value="" disabled selected hidden>Select an option</option>
+                <option value="student">a student</option>
+                <option value="teacher">a teacher</option>
+                <option value="businessowner">a business owner</option>
+                <option value="selfemployed">a self employed</option>
+                <option value="other">other</option>
+            </select>
+
+            <br><br>
+
+            <!-- Telephone -->
+            <label for="tlf">Mobile phone: </label> <br>
+            <input type="text" id="tlf" name="tlf" required class="required-field">
+
+            <br> <br>
+
+            <!-- English level -->
+            <label for="englvl">Select your English level: (0-10): </label> <br>
+            <input type="range" id="englvl" name="englvl" min="0" max="10" value="2">
+
+            <!-- Boton de envio-->
+             <input type="submit" value="Sing me up">
+            
+        </form>
+
+    </body>
+</html>

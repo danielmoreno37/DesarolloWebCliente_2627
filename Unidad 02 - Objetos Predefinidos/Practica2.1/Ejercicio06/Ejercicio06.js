@@ -1,0 +1,18 @@
+fecha();
+
+function fecha (){
+    let fecha = new Date();
+
+    let dias = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+    let meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio","julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+
+    let diaSemana = dias[fecha.getDay()];
+    let dia = fecha.getDate();
+    let mes = meses[fecha.getMonth()];
+    let año = fecha.getFullYear();
+
+    
+
+    alert ("Hoy es " + diaSemana + ", " + dia + " de " + mes + " del " + año);
+    
+}
