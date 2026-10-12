@@ -254,3 +254,36 @@ imprimeMapa (edadPersonas, "Edad de las personas", "mapa");
 ![alt text](Ejercicio03/img/3.4.png)
 
 </div>
+
+---
+
+
+## Ejercicio 4.
+### Mostrar por consola 50 combinaciones aleatorias de la loteria. Las combinaciones son 6 numeros del 1 al 49, pero debe tenerse en cuenta que no se deben de repetir los numeros en una misma combinación.
+
+<div style="margin-left: 30px;">
+
+```js
+let lot= [];
+
+function rellenarLoteria (array){
+    for (let i = 0; i < 50; i++){
+        let combinacion = [];
+        while (combinacion.length < 6){
+            let numero = Math.floor(Math.random()*49)+1;
+            if(!combinacion.includes(numero)){
+                combinacion.push(numero);
+            }
+        }
+        array.push(combinacion);
+    }
+    return array;
+}
+
+lot = rellenarLoteria(lot);
+```
+![alt text](Ejercicio04/img/4.1.png)
+</div>
+
+---
+
