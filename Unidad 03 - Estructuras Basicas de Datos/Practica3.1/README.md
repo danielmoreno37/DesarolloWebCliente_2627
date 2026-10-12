@@ -1,84 +1,191 @@
-# UNIDAD 3 - Practica 1
+# UNIDAD 3 — PRÁCTICA 1
 
-`Ejercicio 1`
 ---
-- ##### Crea el siguiente array
+
+## Ejercicio 1. Manipulación de arrays
+
+### 1.1. Crear el array de datos
+
+<div style="margin-left: 30px;">
+
+Se crea un array de objetos que contiene el nombre, teléfono y edad de cada persona. También se define una función para mostrar los datos en una tabla HTML.
+
 ```js
 let data = [
-    {name: "Nacho",     telephone: "966112233",     age: 40},
-    {name: "Ana",       telephone: "911223344",     age: 35},
-    {name: "Mario",     telephone: "611998877",     age: 15},
-    {name: "Laura",     telephone: "633663366",     age: 17}
+    {name: "Nacho", telephone: "966112233", age: 40},
+    {name: "Ana", telephone: "911223344", age: 35},
+    {name: "Mario", telephone: "611998877", age: 15},
+    {name: "Laura", telephone: "633663366", age: 17}
 ];
-function imprimirArray(arrayDatos, idHtml, enunciado){    
+
+function imprimirArray(arrayDatos, idHtml, enunciado) {
     textoHtml = "";
     textoHtml = textoHtml + "<h2>" + enunciado + "</h2>";
-    textoHtml = textoHtml + 
-        "<table>" + 
+    textoHtml = textoHtml +
+        "<table>" +
             "<thead>" +
                 "<th>Nombre</th> <th>Telefono</th> <th>Edad</th>" +
             "</thead> <tbody>"
     ;
-    for (let i = 0; i < arrayDatos.length; i++){
-        textoHtml = textoHtml + "<tr>" + 
-            "<td>" + arrayDatos[i].name + "</td>" + 
-            "<td>" + arrayDatos[i].telephone + "</td>" + 
-            "<td>" + arrayDatos[i].age + "</td>" + 
+
+    for (let i = 0; i < arrayDatos.length; i++) {
+        textoHtml = textoHtml + "<tr>" +
+            "<td>" + arrayDatos[i].name + "</td>" +
+            "<td>" + arrayDatos[i].telephone + "</td>" +
+            "<td>" + arrayDatos[i].age + "</td>" +
         "</tr>";
     }
+
     textoHtml = textoHtml + "</tbody></table>";
     document.getElementById(idHtml).innerHTML = textoHtml;
 }
 ```
 
-- ##### Añade dos elementos al final
+</div>
+
+### 1.2. Añadir dos elementos al final del array
+
+<div style="margin-left: 30px;">
+
+Se crea una función que recibe el nombre, el teléfono y la edad de una persona. Después, genera un nuevo objeto y lo añade al final del array mediante `push()`.
+
 ```js
-function añadirElemento(nom, tlf, edad){
+function añadirElemento(nom, tlf, edad) {
     let nuevaPersona = {
         name: nom,
         telephone: tlf,
         age: edad
-    }
+    };
+
     data.push(nuevaPersona);
 }
 ```
-![alt text](Ejercicio01/img/2elemfinal.png)
----
 
-- ##### Comprueba con Console Log que se ha añadido
-![alt text](Ejercicio01/img/arrayAñadido.png)
----
+**Resultado:**
 
+![Elementos añadidos al final del array](Ejercicio01/img/2elemfinal.png)
 
-- ##### Ordena el vector por edad y comprueba el resultado
+</div>
+
+### 1.3. Comprobar que se han añadido los elementos
+
+<div style="margin-left: 30px;">
+
+Se utiliza `console.log()` para mostrar el array por consola y comprobar que los nuevos elementos se han añadido correctamente.
+
+![Array con los nuevos elementos](Ejercicio01/img/arrayAñadido.png)
+
+</div>
+
+### 1.4. Ordenar el vector por edad
+
+<div style="margin-left: 30px;">
+
+Se utiliza el método `sort()` para ordenar los elementos por edad, de mayor a menor.
+
 ```js
 data.sort((a, b) => b.age - a.age);
 ```
-![alt text](Ejercicio01/img/edad.png)
----
 
-- ##### Ordena el vector por nombre y comprueba el resultado
+**Resultado:**
+
+![Array ordenado por edad](Ejercicio01/img/edad.png)
+
+</div>
+
+### 1.5. Ordenar el vector por nombre
+
+<div style="margin-left: 30px;">
+
+Se utiliza `sort()` junto con `localeCompare()` para ordenar alfabéticamente los elementos según el nombre de cada persona.
+
 ```js
 data.sort((a, b) => a.name.localeCompare(b.name));
 ```
-![alt text](Ejercicio01/img/nom.png)
----
 
-- ##### Crea y muestra un nuevo vector que contenga los mayores de 30
+**Resultado:**
+
+![Array ordenado por nombre](Ejercicio01/img/nom.png)
+
+</div>
+
+### 1.6. Crear y mostrar un nuevo vector con los mayores de 30 años
+
+<div style="margin-left: 30px;">
+
+Se crea la función `mayores30()`, que recorre el array original y añade a un nuevo vector únicamente las personas cuya edad sea superior a 30 años. Finalmente, devuelve el nuevo vector.
+
 ```js
-function mayores30(arrayBase){
+function mayores30(arrayBase) {
     let edad30 = [];
 
-    for (let i = 0; i < arrayBase.length; i++){
-        if (arrayBase[i].age > 30){
+    for (let i = 0; i < arrayBase.length; i++) {
+        if (arrayBase[i].age > 30) {
             edad30.push(arrayBase[i]);
         }
-            
     }
 
     return edad30;
 }
 ```
-![alt text](Ejercicio01/img/mayores30.png)
+
+**Resultado:**
+
+![Vector con las personas mayores de 30 años](Ejercicio01/img/mayores30.png)
+
+</div>
+
 ---
 
+
+
+## Ejercicio 2. 
+### Crea un array llamado valores que contenga números, algunos de los cuales son duplicados. Utiliza un Set para crear un nuevo array que contenga solo los números únicos y luego imprímelo.
+
+<div style="margin-left: 30px;">
+    Creamos un array el cual contenga los valores que hemos decidido poner. Una vez hecho esto agregamos una función la cual cogera este array y retornará un array sin duplicados ya que la pasará por un set creando un nuevo array sin duplicados. <br> <br>
+    Una vez tenemos el array lo pasaremos por la función de impresión de array en tabla
+
+```js
+let valores =  [ 10, 20, 30, 40, 20, 50, 60, 70, 10, 30, 50, 80, 100, 100, 90];
+
+function sinDuplicados (vDuplicados){
+    let vUnicos = Array.from(new Set (vDuplicados));
+    return vUnicos;
+}
+
+function imprimirHtml (array, idHtml, titulo){
+    let textoHtml = "";
+    textoHtml = textoHtml + 
+        " <p> <table border = '1' cellspacing='0' style='border-color: black'>" + 
+            "<thead> " +
+                "<tr> <th colspan = " + array.length + ">" + titulo +"</th> </tr>" +
+            "</thead>" +
+            "<tbody> <tr>";
+            
+    for (let i = 0; i < array.length; i ++){
+        textoHtml = textoHtml + "<td>" + array[i] + "</td>";
+    }
+
+    textoHtml = textoHtml + "</tr> </tbody> </table> </p>";
+    document.getElementById(idHtml).innerHTML = textoHtml;
+}
+
+imprimirHtml(valores, "arrayOriginal", "Array original")
+imprimirHtml(sinDuplicados(valores), "arrayMod", "Array sin Duplicados");
+```
+
+**Resultado:** 
+![arraysinduplicados](Ejercicio02/img/arraySinDupli.png)
+
+</div>
+
+---
+
+
+
+## Ejercicio 3. 
+### 3.1 - Crea un Map que almacene nombres como claves y edades como valores.
+### 3.2 - Agrega algunos nombres y edades.
+### 3.3 - Actualiza la edad de uno de ellos.
+### 3.4 - Imprime todos los nombres con sus edades.
