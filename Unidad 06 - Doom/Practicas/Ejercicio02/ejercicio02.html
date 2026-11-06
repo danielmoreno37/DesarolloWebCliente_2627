@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica 2 - Validación de Formulario</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 4px;
+        }
+        .campo {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="miFormulario">
+        <div class="campo">
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" placeholder="xxxx@yyyy.zzzz">
+            <span id="errorEmail" class="error"></span>
+        </div>
+
+        <div class="campo">
+            <label for="password">Password (8-10 caracteres):</label><br>
+            <input type="password" id="password">
+            <span id="errorPassword" class="error"></span>
+        </div>
+
+        <button type="submit" id="btnEnviar" disabled style="background-color: lightgray; cursor: not-allowed;">Enviar</button>
+    </form>
+
+    <script src="ejercicio02.js"></script>
+</body>
+</html>

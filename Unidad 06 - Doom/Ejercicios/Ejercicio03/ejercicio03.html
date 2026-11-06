@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 - Ocultar y Eliminar Cajas</title>
+    <style>
+        .caja {
+            width: 150px;
+            height: 100px;
+            background-color: #007bff;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            user-select: none;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btnReaparecer">Reaparecer</button>
+    <hr>
+    
+    <div class="caja">Caja 1</div>
+    <div class="caja">Caja 2</div>
+    <div class="caja">Caja 3</div>
+
+    <script src="ejercicio03.js"></script>
+</body>
+</html>

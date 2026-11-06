@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica 3 - Drag and Drop</title>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 1em;
+            position: fixed;
+            top: 20px;
+            width: 200px;
+            height: 100px;
+        }
+        #capa1 {
+            left: 50px;
+            background-color: yellow;
+            cursor: move;
+        }
+        #capa2 {
+            left: 400px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Añadido draggable="true" para que se pueda arrastrar -->
+    <div id="capa1" draggable="true">Soy arrastrable</div>
+    <div id="capa2">Soy el destino</div>
+
+    <script src="ejercicio03.js"></script>
+</body>
+</html>
