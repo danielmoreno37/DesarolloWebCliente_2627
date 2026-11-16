@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 3</title>
+</head>
+<body>
+    <p id="parrafo1"></p>
+    <p id="parrafo2"></p>
+
+    <script type="module">
+        import { cuenta } from './temporizador.js';
+
+        const p1 = document.getElementById("parrafo1");
+        const p2 = document.getElementById("parrafo2");
+
+        cuenta(6, p1, 1000);
+
+        cuenta(60, p2, 100, function () {
+            p2.textContent = "Fin";
+        });
+    </script>
+</body>
+</html>
